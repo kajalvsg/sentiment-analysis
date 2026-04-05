@@ -1,0 +1,3 @@
+Model,Accuracy,Precision,Recall,F1-Score
+Logistic Regression,70.0,70.0,70.0,70.0
+Naive Bayes,70.0,70.0,70.0,70.0

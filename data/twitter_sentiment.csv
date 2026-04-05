@@ -1,0 +1,101 @@
+tweet,label,sentiment
+The new office software is clunky and slow and has made my work so much harder now,0,negative
+My flight got cancelled and nobody bothered to offer any explanation or help,0,negative
+The concert was way too loud and the sound quality was genuinely terrible throughout,0,negative
+"Cozy rainy day with hot chocolate and a good book, life does not get better",1,positive
+The kindness of strangers never ceases to amaze and warm my heart completely,1,positive
+"So proud of how far I have come this year, growth is a beautiful thing",1,positive
+"Received great feedback on my presentation today at work, so relieved",1,positive
+"Another sleepless night overthinking everything, anxiety is really getting to me lately",0,negative
+Aced my exam! All those late night study sessions finally paid off,1,positive
+I love this product so much! Absolutely amazing experience!,1,positive
+Workout session complete! Feeling energized and unstoppable right now,1,positive
+The new season of my favorite show is even better than I expected wow,1,positive
+"Cannot seem to focus today no matter what I try, everything is distracting and hard",0,negative
+My plants are thriving and it genuinely makes me so happy every morning,1,positive
+Wasted my entire afternoon on hold with customer service and got no resolution at all,0,negative
+"Had the best meal at that new restaurant, totally worth it!",1,positive
+Spilled coffee all over my brand new shirt right before an important meeting today,0,negative
+"The noise from construction outside has been unbearable all week, cannot concentrate",0,negative
+"Great customer service experience, they went above and beyond for me",1,positive
+Passed my driving test on the first attempt! So relieved and happy now,1,positive
+"Lost my wallet today with everything in it, what a horrible start to the week",0,negative
+"Burnt my dinner after a long and tiring day, sometimes nothing seems to go right at all",0,negative
+"This charity event raised so much money, humanity can be truly beautiful",1,positive
+Meditation and journaling have genuinely transformed my mornings for better,1,positive
+My commute took three times longer than usual today because of an unexpected strike,0,negative
+So grateful for my amazing friends who always support and cheer me,1,positive
+"Incredible team effort today, we crushed every single goal we set out with",1,positive
+"Third time this week the train has been delayed, this service is genuinely unacceptable",0,negative
+"New album dropped and it is absolutely fire, been on repeat all day",1,positive
+"My phone battery died in the middle of a really important call, so embarrassing",0,negative
+Adopted a puppy today and my life is now complete and full of joy,1,positive
+"Delivered my speech confidently today, public speaking fears are fading fast",1,positive
+"My headphones stopped working after just one week, the quality was just absolutely awful",0,negative
+Home cooked meal with family beats any restaurant any day of the week,1,positive
+"Feeling really overwhelmed with the amount of work piling up, no end seems in sight",0,negative
+My team won the championship! So proud of everyone involved!,1,positive
+"Gym was overcrowded and every single machine was taken, completely wasted my time",0,negative
+Received some really bad news today and I have no idea how to deal with it at all,0,negative
+"Woke up feeling refreshed and motivated, today is going to be a great day",1,positive
+New coffee shop opened nearby and the lattes are absolutely incredible,1,positive
+Life is genuinely good when you focus on gratitude and small joyful moments,1,positive
+Random act of kindness today really restored my faith in people completely,1,positive
+"Beautiful sunset today, nature never fails to amaze me",1,positive
+Cannot believe how inconsiderate my neighbours are being again with the loud music tonight,0,negative
+Just completed my first marathon! Never felt more alive and accomplished,1,positive
+"My garden is blooming beautifully this spring, so much color everywhere",1,positive
+The queue at the post office was ridiculously long and staff were unhelpful and slow,0,negative
+So happy to reconnect with old friends after such a long time apart,1,positive
+"My laptop crashed and I lost hours of unsaved work, this is so incredibly frustrating",0,negative
+Just booked my dream vacation! Cannot wait to explore new places,1,positive
+"Sunrise hike was totally worth waking up early for, breathtaking views",1,positive
+"This movie was fantastic, highly recommend it to everyone!",1,positive
+Finished reading that book and it genuinely changed my perspective on life,1,positive
+"Weekend getaway was exactly what I needed, totally recharged and refreshed",1,positive
+"Got a surprise gift from my best friend, feeling so loved today!",1,positive
+Friend cancelled our plans at the very last minute again for the third time this month,0,negative
+Finally finished my project and it looks great! Hard work pays off,1,positive
+The weather has been miserable for weeks and it is really affecting my mood badly,0,negative
+"The baby laughed for the first time today, most precious sound in the world",1,positive
+"The app keeps crashing every single time I try to use it, this is beyond frustrating now",0,negative
+"The movie was painfully boring, I almost fell asleep within the first ten minutes",0,negative
+"Ended a long friendship today and it hurts more than I expected it would, feeling very sad",0,negative
+"Feeling so exhausted and burnt out, everything just feels overwhelming lately",0,negative
+Just got my dream internship offer! All the hard work finally paid off today,1,positive
+"Terrible customer service, waited two hours and got absolutely no help at all",0,negative
+Got overcharged at the store and the manager refused to acknowledge the clear mistake,0,negative
+My sister got engaged and I could not be more excited and happy for her,1,positive
+"Slept terribly again last night, this insomnia is absolutely destroying my productivity",0,negative
+"Failed my exam despite studying so hard, feeling completely defeated and hopeless right now",0,negative
+"My code has a bug I cannot figure out after hours of debugging, ready to give up entirely",0,negative
+My subscription was charged twice and getting a refund is proving nearly impossible,0,negative
+"The spring flowers are absolutely gorgeous, cannot stop smiling at nature",1,positive
+"So disappointed with the new update, it ruined everything that was working fine",0,negative
+Volunteered at the shelter today and the smiles made everything worthwhile,1,positive
+So frustrated with slow bureaucratic processes that make everything ten times harder than needed,0,negative
+Internet has been down all day and I have an important deadline coming up soon,0,negative
+"Feeling really underappreciated at work lately, my efforts go completely unnoticed",0,negative
+"Collaboration with my teammates was smooth, we nailed the deadline today",1,positive
+"The hotel room was nothing like the photos shown online, felt completely misled and cheated",0,negative
+"Traffic was absolutely horrible this morning, arrived late to a very important meeting",0,negative
+"Cannot believe how rude people can be on public transport, absolutely no consideration",0,negative
+"Feeling isolated and disconnected from everyone around me, it is a very lonely feeling",0,negative
+"Finally fixed that annoying bug in my code, victory feels so incredibly sweet",1,positive
+Grateful for every small moment that makes life so wonderfully worth living,1,positive
+What a wonderful day! Feeling so happy and grateful today :),1,positive
+"Worst experience ever at that restaurant, food was cold and staff was rude",0,negative
+The concert last night was absolutely mind blowing and unforgettable,1,positive
+Just got promoted at work! So excited about the future!,1,positive
+"Loving the new software update, everything is smoother and faster now",1,positive
+The seminar was painfully dull and added absolutely zero value to my knowledge at all,0,negative
+The refund policy is completely unfair and the staff were dismissive and unhelpful,0,negative
+The package arrived completely damaged and customer support was absolutely no help,0,negative
+Got a parking ticket even though I was parked completely legally and correctly today,0,negative
+Missed the bus by literally seconds and had to wait another forty minutes in the cold,0,negative
+Best birthday ever! Surrounded by people I love and care about deeply,1,positive
+"Ordered food an hour ago and it still has not arrived, completely unacceptable service",0,negative
+Disappointed that the event was cancelled with barely any notice given at all to us,0,negative
+"The weather is perfect today, ideal for a walk in the park",1,positive
+My project partner did not contribute anything and I ended up doing everything alone,0,negative
+"This product broke after one day, total waste of money and very disappointing",0,negative
