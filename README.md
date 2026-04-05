@@ -1,197 +1,97 @@
-# 🐦 Twitter Sentiment Analysis — NLP & Machine Learning
+# Sentiment Analysis & NLP Text Classifier
 
-[![Python](https://img.shields.io/badge/Python-3.8%2B-blue?logo=python)](https://python.org)
-[![scikit-learn](https://img.shields.io/badge/scikit--learn-ML-orange?logo=scikit-learn)](https://scikit-learn.org)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![Jupyter](https://img.shields.io/badge/Jupyter-Notebook-orange?logo=jupyter)](notebooks/sentiment_analysis.ipynb)
+End-to-end sentiment classification project using Python, NLTK, scikit-learn, and TF-IDF.
 
-> A complete end-to-end NLP pipeline that classifies Twitter tweets as **Positive** or **Negative** using TF-IDF vectorization and machine learning classifiers.
+This repository includes:
+- NLP preprocessing (tokenization-style cleaning, stopword removal, lemmatization)
+- TF-IDF vectorization (unigrams + bigrams)
+- Baseline models: Logistic Regression and Naive Bayes
+- Evaluation: accuracy, precision, recall, F1-score
+- Inference via CLI and Streamlit web app
 
-**Author:** Kajal Gupta &nbsp;|&nbsp; [LinkedIn](https://www.linkedin.com/in/kajal-gupta-a18908246) &nbsp;|&nbsp; [GitHub](https://github.com/kajalvsg)
+## Project Structure
 
----
-
-## 📌 Project Overview
-
-This project demonstrates a full **NLP text classification pipeline**:
-
-- **Preprocessing** — tokenization, stopword removal, lemmatization
-- **Feature Extraction** — TF-IDF vectorization (unigrams + bigrams)
-- **Modelling** — Logistic Regression vs. Naive Bayes
-- **Evaluation** — Precision, Recall, F1-Score, Confusion Matrix
-- **Inference** — Predict sentiment on any custom tweet
-
----
-
-## 📂 Project Structure
-
-```
+```text
 sentiment-analysis/
-│
-├── notebooks/
-│   └── sentiment_analysis.ipynb    ← Full pipeline walkthrough
-│
-├── data/
-│   └── twitter_sentiment.csv       ← Dataset (100 labelled tweets)
-│
-├── outputs/
-│   └── model_results.csv           ← Saved evaluation metrics
-│
-├── images/                         ← All result visualizations
-│   ├── class_distribution.png
-│   ├── confusion_matrices.png
-│   ├── model_comparison.png
-│   ├── top_features.png
-│   └── tweet_length_dist.png
-│
+├── app.py                         # Streamlit app
+├── main.py                        # CLI prediction entrypoint
 ├── requirements.txt
-├── .gitignore
-└── README.md
+├── README.md
+├── data/
+│   └── twitter_sentiment.csv
+├── outputs/
+│   └── model_results.csv          # generated after training
+├── models/                        # generated after training
+│   ├── best_model.joblib
+│   ├── logisticregression_pipeline.joblib
+│   └── naivebayes_pipeline.joblib
+├── notebooks/
+│   └── sentiment_analysis.ipynb
+└── src/
+    ├── __init__.py
+    ├── preprocess.py
+    ├── train.py
+    └── predict.py
 ```
 
----
-
-## ⚙️ Setup & Installation
+## Local Setup
 
 ```bash
-# 1. Clone the repository
-git clone https://github.com/kajalvsg/sentiment-analysis.git
-cd sentiment-analysis
-
-# 2. Create a virtual environment (recommended)
-python -m venv venv
-source venv/bin/activate        # Mac/Linux
-venv\Scripts\activate           # Windows
-
-# 3. Install dependencies
+# Windows (PowerShell)
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
 pip install -r requirements.txt
-
-# 4. Launch the notebook
-jupyter notebook notebooks/sentiment_analysis.ipynb
 ```
 
----
+## Train the Model
 
-## 🧹 NLP Preprocessing Pipeline
-
-Each tweet goes through the following steps before being fed to the model:
-
-| Step | Description | Example |
-|------|-------------|---------|
-| **Lowercase** | Normalise all text | `"Happy"` → `"happy"` |
-| **URL Removal** | Strip `http://` links | `"visit http://x.com"` → `"visit"` |
-| **Mention Removal** | Remove `@username` | `"@john great!"` → `"great!"` |
-| **Hashtag Cleaning** | Strip `#` but keep word | `"#amazing"` → `"amazing"` |
-| **Punctuation Removal** | Keep only letters | `"wow!!!"` → `"wow"` |
-| **Stopword Removal** | Drop common words | `"this is great"` → `"great"` |
-| **Lemmatization** | Base form of words | `"running"` → `"run"` |
-
----
-
-## 🔢 TF-IDF Vectorization
-
-- **Max features:** 3,000 most informative tokens
-- **N-gram range:** Unigrams + Bigrams `(1, 2)`
-- **Train / Test split:** 80% / 20% (stratified)
-
----
-
-## 🤖 Models Trained
-
-| Model | Description |
-|-------|-------------|
-| **Logistic Regression** | Strong linear baseline; uses learned coefficients per token |
-| **Multinomial Naive Bayes** | Probabilistic model; assumes feature independence; fast and effective for text |
-
----
-
-## 📊 Results
-
-### Model Performance Comparison
-
-![Model Comparison](images/model_comparison.png)
-
-| Model | Accuracy | Precision | Recall | F1-Score |
-|-------|----------|-----------|--------|----------|
-| **Logistic Regression** | 70.00% | 70.00% | 70.00% | 70.00% |
-| **Naive Bayes** | 70.00% | 70.00% | 70.00% | 70.00% |
-
----
-
-### Confusion Matrices
-
-![Confusion Matrices](images/confusion_matrices.png)
-
----
-
-### Class Distribution
-
-![Class Distribution](images/class_distribution.png)
-
----
-
-### Top Influential TF-IDF Features
-
-The chart below shows which words drive predictions most strongly in the **Logistic Regression** model:
-
-![Top Features](images/top_features.png)
-
----
-
-### Tweet Length Distribution
-
-![Tweet Length Distribution](images/tweet_length_dist.png)
-
----
-
-## 🔍 Try It Yourself
-
-```python
-def predict_sentiment(tweet, model=lr):
-    cleaned    = preprocess_tweet(tweet)
-    vectorized = tfidf.transform([cleaned])
-    pred       = model.predict(vectorized)[0]
-    prob       = model.predict_proba(vectorized)[0]
-    label      = 'POSITIVE 😊' if pred == 1 else 'NEGATIVE 😞'
-    confidence = round(max(prob) * 100, 2)
-    print(f'Sentiment  : {label}')
-    print(f'Confidence : {confidence}%')
-
-predict_sentiment("I absolutely love this new phone, it is amazing!")
-# → POSITIVE 😊  |  Confidence: 89.4%
-
-predict_sentiment("This is the worst service I have ever experienced.")
-# → NEGATIVE 😞  |  Confidence: 91.2%
+```bash
+python -m src.train
 ```
 
----
+This will:
+- train Logistic Regression and Naive Bayes pipelines
+- save model artifacts in `models/`
+- save metrics in `outputs/model_results.csv`
 
-## 🛠️ Tech Stack
+## Run Predictions (CLI)
 
-| Category | Tools |
-|----------|-------|
-| Language | Python 3.8+ |
-| NLP | NLTK (optional), custom preprocessing pipeline |
-| ML | scikit-learn (TF-IDF, Logistic Regression, Naive Bayes) |
-| Data | pandas, NumPy |
-| Visualisation | matplotlib, seaborn |
-| Notebook | Jupyter |
+```bash
+python main.py
+```
 
----
+Type text and get predicted sentiment + confidence.
 
-## 🚀 Future Improvements
+## Run Web App (Streamlit)
 
-- [ ] Integrate VADER / TextBlob for lexicon-based baseline
-- [ ] Experiment with deep learning — LSTM / BERT fine-tuning
-- [ ] Deploy as a REST API using FastAPI
-- [ ] Add a Streamlit interactive web app
+```bash
+streamlit run app.py
+```
 
----
+Open the shown local URL in your browser.
 
-## 📄 License
+## Example Resume Bullets
 
-This project is licensed under the [MIT License](LICENSE).
+- Built a text classification pipeline using NLP preprocessing (cleaning, stopword removal, lemmatization) and TF-IDF vectorization to classify sentiment in customer review data.
+- Evaluated baseline models (Logistic Regression and Naive Bayes) using precision, recall, F1-score, and confusion-matrix compatible outputs.
 
----
+## Push to GitHub
 
-*Built with 💙 by [Kajal Gupta](https://github.com/kajalvsg)*
+```bash
+git init
+git add .
+git commit -m "Build end-to-end sentiment analysis NLP classifier with Streamlit app"
+git branch -M main
+git remote add origin https://github.com/<your-username>/sentiment-analysis.git
+git push -u origin main
+```
+
+## Deploy on Streamlit Community Cloud
+
+1. Push this repo to GitHub.
+2. Go to [https://share.streamlit.io](https://share.streamlit.io).
+3. Click **New app** and select your repo.
+4. Set main file path to `app.py`.
+5. Deploy.
+
+After deployment, add the live app link to your GitHub README for portfolio visibility.
