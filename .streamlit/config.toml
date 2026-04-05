@@ -1,0 +1,3 @@
+# Project Streamlit settings (applies locally and on Streamlit Community Cloud)
+[browser]
+gatherUsageStats = false
