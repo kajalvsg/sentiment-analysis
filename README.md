@@ -8,12 +8,15 @@ This repository includes:
 - Baseline models: Logistic Regression and Naive Bayes
 - Evaluation: accuracy, precision, recall, F1-score
 - Inference via CLI and Streamlit web app
+- REST API via FastAPI
+- Automated tests and GitHub Actions CI
 
 ## Project Structure
 
 ```text
 sentiment-analysis/
 ├── app.py                         # Streamlit app
+├── api.py                         # FastAPI app
 ├── main.py                        # CLI prediction entrypoint
 ├── requirements.txt
 ├── README.md
@@ -27,11 +30,17 @@ sentiment-analysis/
 │   └── naivebayes_pipeline.joblib
 ├── notebooks/
 │   └── sentiment_analysis.ipynb
-└── src/
-    ├── __init__.py
-    ├── preprocess.py
-    ├── train.py
-    └── predict.py
+├── src/
+│   ├── __init__.py
+│   ├── preprocess.py
+│   ├── train.py
+│   └── predict.py
+├── tests/
+│   ├── test_api.py
+│   ├── test_predict.py
+│   └── test_preprocess.py
+└── .github/workflows/
+    └── ci.yml
 ```
 
 ## Local Setup
@@ -69,6 +78,20 @@ streamlit run app.py
 ```
 
 Open the shown local URL in your browser.
+
+## Run API (FastAPI)
+
+```bash
+uvicorn api:app --reload
+```
+
+Open API docs at `http://127.0.0.1:8000/docs`.
+
+## Run Tests
+
+```bash
+pytest -q
+```
 
 ## Example Resume Bullets
 
